@@ -18,9 +18,9 @@ Dark Theme UI: Strictly adheres to Spotify's color palette (deep blacks, dark gr
 🛠️ Built With
 HTML5
 
-CSS3 (Vanilla)
+CSS3 
 
-JavaScript (Vanilla DOM manipulation)
+JavaScript
 
 📁 Featured Projects
 IPL Analytics Project: An SQL-based database tracking system for organizing and analyzing complex Indian Premier League cricket statistics.
@@ -34,6 +34,6 @@ Ensure index.html, style.css, your profile image (SHIVAM.jpg), and your backgrou
 
 Open index.html in any modern web browser to view the site.
 
-Designed and Built by Shivam
+Designed and Built by Shivam Gogri
 
 MBA TECH DS @ NMIMS MPSTME

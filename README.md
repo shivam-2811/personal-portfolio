@@ -1,10 +1,13 @@
 🎵 Spotify-Inspired Personal Portfolio
-Live Demo: Click Here to Listen [(https://shivam-2811.github.io/personal-portfolio/)]
+
+**Live Demo:** [Click Here to Listen](https://shivam-2811.github.io/personal-portfolio/)
 
 🎧 About The Project
+
 A highly interactive, fully responsive personal portfolio meticulously designed to mimic the aesthetic and native functionality of the Spotify desktop application. Built from scratch using pure HTML, CSS, and Vanilla JavaScript, this project transitions from a static webpage into a dynamic web app, showcasing my technical projects, skills, and hobbies through the lens of a "Verified Artist" profile.
 
 ✨ Key Features & Micro-Interactions
+
 Advanced Custom Audio Player: A fully functional "Now Playing" footer bar featuring:
 
 Multi-track playlist support with working Next/Previous buttons.
@@ -32,6 +35,7 @@ Spotify Artist Aesthetic: Includes a circular profile picture, a blue "Verified 
 Modern CSS Layouts: Utilizes CSS Grid and Flexbox for responsive project tracklists and interactive, clickable filter "pill" tags.
 
 🛠️ Built With
+
 HTML5
 
 CSS3 
@@ -39,11 +43,13 @@ CSS3
 JavaScript 
 
 📁 Featured Projects (Tracklist)
+
 IPL Analytics Project (April 2026): An SQL-based database tracking system for organizing and analyzing complex Indian Premier League cricket statistics.
 
 Musical Markov Chain (April 2026): An algorithmic music generator built using Markov Chains to analyze existing note patterns and probabilistically compose original, mathematically-driven melodies.
 
 🚀 How to Run Locally
+
 Clone this repository or download the ZIP file.
 
 Ensure index.html, style.css, your profile images (SHIVAM.jpg, coding.jpg), and your audio files (e.g., song.mp3, song2.mp3, song3.mp3) are in the same root directory.

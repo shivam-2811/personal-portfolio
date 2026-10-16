@@ -1,0 +1,83 @@
+/* Base Styles & Dark Theme */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Playlist Header */
+.playlist-header {
+    display: flex;
+    padding: 40px;
+    background: linear-gradient(to bottom, #4a4a4a, #121212);
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.album-cover {
+    width: 200px;
+    height: 200px;
+    background-color: #282828;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    /* Add background-image: url('your-photo.jpg'); here later */
+}
+
+.playlist-info p { margin: 5px 0; color: #b3b3b3; font-size: 14px; }
+.playlist-info h1 { font-size: 3rem; margin: 0 0 10px 0; }
+
+.play-btn {
+    display: inline-block;
+    background-color: #1ed760; /* Music app green */
+    color: black;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.play-btn:hover { transform: scale(1.05); }
+
+/* Tracklist (Projects) */
+.tracklist-container { padding: 20px 40px; }
+.tracklist-container h2 { border-bottom: 1px solid #282828; padding-bottom: 10px;}
+
+.track {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.track:hover { background-color: #2a2a2a; }
+
+.track-num { width: 30px; color: #b3b3b3; text-align: center; }
+.track-details { flex-grow: 1; margin-left: 15px; }
+.track-details h3 { margin: 0; font-size: 16px; }
+.track-details p { margin: 5px 0 0 0; font-size: 14px; color: #b3b3b3; }
+.track-duration { color: #b3b3b3; font-size: 14px; }
+
+/* Skills Tags */
+.skills-section { margin-top: 40px; }
+.tags span {
+    background-color: #2a2a2a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Mobile Responsiveness (Required by Assignment) */
+@media (max-width: 600px) {
+    .playlist-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .playlist-info h1 { font-size: 2rem; }
+    .tracklist-container { padding: 15px; }
+}

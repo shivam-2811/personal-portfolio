@@ -11,19 +11,30 @@
 <body>
 
     <header class="playlist-header">
-        <img src="SHIVAM.jpg" alt="Photo of Shivam" class="album-cover" style="object-fit: cover;"> 
+        <img src="SHIVAM.jpg" alt="Photo of Shivam" class="album-cover" style="object-fit: cover; border-radius: 50%;">
         <div class="playlist-info">
             <p>PUBLIC PLAYLIST</p>
-            <h1>Shivam's Greatest Hits</h1>
-            <p id="about">I am currently pursuing MBA TECH DS from NMIMS MPSTME.<br><br>
-                Apart from that I am a huge cricket fan and I also like to travel, go on late night long drives and I love to explore new cuisines.</p>
-           <div style="margin-top: 25px;">
-                <p style="color: white; font-size: 16px; font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px;">Here is where you can contact me:</p>
-                <div class="actions" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shivambackup69@gmail.com" target="_blank" class="play-btn" style="margin-top: 0;">Email</a>
-                    <a href="https://github.com/shivam-2811" target="_blank" class="play-btn" style="margin-top: 0;">GitHub</a>
-                    <a href="linkedin.com/in/shivam-gogri-225370330" target="_blank" class="play-btn" style="margin-top: 0;">LinkedIn</a>
+            <h1 style="display: flex; align-items: center; gap: 10px; margin: 0 0 5px 0;">
+                Shivam's Greatest Hits
+                <span style="background-color: #2e77d0; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 14px;">✓</span>
+            </h1>
+            <p style="color: white; font-weight: 500; font-size: 14px; margin: 0 0 15px 0;">4 Public Repositories • MBA Tech DS</p>
+            <p id="about">Student at NMIMS by day, developer and data enthusiast by night.<br><br>
+                Off-screen, I'm a cricket fanatic always looking forward to the next travel destination, a late-night drive, or a great new meal.</p>
+          <div style="margin-top: 25px;">
+                <!-- Distinctive Follow Button Row -->
+                <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 24px;">
+                    <button class="big-play-btn" style="width: 56px; height: 56px; border-radius: 50%; background-color: #1ed760; color: black; border: none; font-size: 24px; padding-left: 5px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.1s, background-color 0.2s; box-shadow: 0 8px 8px rgba(0,0,0,0.3);">▶</button>
+                    <button id="follow-btn" style="background: transparent; color: white; border: 1px solid #878787; padding: 6px 20px; border-radius: 4px; text-transform: uppercase; font-weight: bold; font-size: 12px; cursor: pointer; letter-spacing: 1px; transition: all 0.2s;">Follow</button>
                 </div>
+                
+                <!-- Secondary Social Links Row -->
+                <div class="actions" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shivambackup69@gmail.com" target="_blank" style="background: transparent; color: white; border: 1px solid #878787; padding: 6px 20px; border-radius: 32px; font-weight: bold; font-size: 14px; transition: all 0.2s;">Email</a>
+                    <a href="https://github.com/shivam-2811" target="_blank" style="background: transparent; color: white; border: 1px solid #878787; padding: 6px 20px; border-radius: 32px; font-weight: bold; font-size: 14px; transition: all 0.2s;">GitHub</a>
+                    <a href="https://www.linkedin.com/in/shivam-gogri-225370330" target="_blank" style="background: transparent; color: white; border: 1px solid #878787; padding: 6px 20px; border-radius: 32px; font-weight: bold; font-size: 14px; transition: all 0.2s;">LinkedIn</a>
+                </div>
+            </div>
             </div>
         </div>
     </header>
@@ -51,7 +62,7 @@
                     <h3>Musical Markov Chain</h3>
                     <p>Collaborated in making an algorithmic music generator built using Markov Chains to analyze existing note patterns and probabilistically compose original, mathematically-driven melodies.</p>
                 </div>
-                <div class="track-duration">2024</div>
+                <div class="track-duration">April 2026</div>
             </a>
         </div>
 
@@ -59,7 +70,7 @@
         <section class="skills-section">
             <h2>Technical Skills</h2>
             <div class="tags">
-                <span>All</span> 
+                <span class="active">All</span> 
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
@@ -75,7 +86,7 @@
         <section class="skills-section">
             <h2>Hobbies & Interests</h2>
             <div class="tags">
-                <span>All</span> 
+                <span class="active">All</span> 
                 <span>Travelling</span>
                 <span>Cooking</span>
                 <span>Driving</span>
@@ -89,22 +100,28 @@
 
     <!-- Now Playing Footer Bar -->
     <div class="now-playing-bar">
+        <div class="volume-control" style="display: flex; align-items: center; gap: 10px; color: #b3b3b3;">
+            <span>🔈</span>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" style="width: 80px; accent-color: #1ed760;">
+        </div>
         <!-- Live Music Progress Bar -->
-        <div class="progress-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background-color: #333;">
+        <div id="progress-container" class="progress-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background-color: #333; cursor: pointer;">
             <div id="progress-bar" style="height: 100%; width: 0%; background-color: #1ed760;"></div>
         </div>
         
         <div class="playing-info">
-            <img src="coding.jpg" alt="Project Art" class="mini-art" style="object-fit: cover;">
+            <img src="coding.jpg" id="current-art" alt="Project Art" class="mini-art" style="object-fit: cover;">
             <div>
-                <h4>Currently Coding</h4>
-                <p>IMAP Personal Portfolio</p>
+                <h4 id="current-title">Currently Coding</h4>
+                <p id="current-desc">IMAP Personal Portfolio</p>
             </div>
+            <!-- Add the heart here -->
+            <span id="like-btn" title="Save to Your Library" style="cursor: pointer; font-size: 20px; margin-left: 10px; color: #b3b3b3; transition: color 0.2s;">♡</span>
         </div>
         <div class="player-controls">
-            <span>⏮</span>
-            <span class="play-pause">▶</span>
-            <span>⏭</span>
+            <span id="prev-track" title="Previous">⏮</span>
+            <span class="play-pause" title="Play">▶</span>
+            <span id="next-track" title="Next">⏭</span>
         </div>
     </div>
 
@@ -112,39 +129,154 @@
     <audio id="bg-music" src="song.mp3"></audio>
 
     <script>
-        // Dynamic time-based greeting logic
-        const hour = new Date().getHours();
-        const greetingElement = document.getElementById('dynamic-greeting');
-        
-        if (hour < 12) {
-            greetingElement.textContent = 'Good morning';
-        } else if (hour < 18) {
-            greetingElement.textContent = 'Good afternoon';
-        } else {
-            greetingElement.textContent = 'Good evening';
-        }
-
-        // Select the play button and the audio file
-        const playButton = document.querySelector('.play-pause');
+        // 1. Audio and Button Variables
         const mySong = document.getElementById('bg-music');
+        const playButton = document.querySelector('.play-pause');
+        const volumeSlider = document.getElementById('volume-slider');
+        const prevButton = document.getElementById('prev-track');
+        const nextButton = document.getElementById('next-track');
+        
+        // UI Elements to Update
+        const currentTitle = document.getElementById('current-title');
+        const currentDesc = document.getElementById('current-desc');
+        const currentArt = document.getElementById('current-art');
+        
         let isPlaying = false;
 
-        // Toggle between play/pause icons AND play/pause the actual audio
+        // 2. The Playlist Array
+        const playlist = [
+            { title: "Currently Coding", artist: "IMAP Personal Portfolio", src: "song.mp3", art: "coding.jpg" },
+            { title: "Late Night Focus", artist: "Lofi Beats", src: "song3.mp3", art: "coding.jpg" },
+            { title: "Debugging Anthem", artist: "Synthwave", src: "song2.mp3", art: "coding.jpg" },
+            { title: "Rebooting the brain", artist: "Synthwave", src: "song1.mp3", art: "coding.jpg" }
+        ];
+        let trackIndex = 0;
+
+        // Function to load a track
+        function loadTrack(index) {
+            document.title = `${playlist[index].title} - Shivam's Portfolio`;
+            mySong.src = playlist[index].src;
+            currentTitle.textContent = playlist[index].title;
+            currentDesc.textContent = playlist[index].artist;
+            currentArt.src = playlist[index].art;
+            
+            // If music was already playing, automatically play the new track
+            if (isPlaying) {
+                mySong.play();
+            }
+        }
+
+        // 3. Next and Previous Track Controls
+        nextButton.addEventListener('click', () => {
+            trackIndex = (trackIndex + 1) % playlist.length; // Loops back to start
+            loadTrack(trackIndex);
+        });
+
+        prevButton.addEventListener('click', () => {
+            trackIndex = (trackIndex - 1 + playlist.length) % playlist.length; // Loops to end
+            loadTrack(trackIndex);
+        });
+
+        // Auto-play the next song when the current one finishes
+        mySong.addEventListener('ended', () => {
+            nextButton.click();
+        });
+
+        // 4. Volume Control
+        mySong.volume = volumeSlider.value; 
+        volumeSlider.addEventListener('input', (e) => {
+            mySong.volume = e.target.value;
+        });
+
+        // 5. Interactive Tags Logic
+        const tags = document.querySelectorAll('.tags span');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.parentElement.querySelectorAll('span').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+            });
+        });
+
+        // 6. Dynamic time-based greeting
+        const hour = new Date().getHours();
+        const greetingElement = document.getElementById('dynamic-greeting');
+        if (hour < 12) greetingElement.textContent = 'Good morning';
+        else if (hour < 18) greetingElement.textContent = 'Good afternoon';
+        else greetingElement.textContent = 'Good evening';
+
+        // 7. Play/Pause Logic
         playButton.addEventListener('click', () => {
             isPlaying = !isPlaying;
             if (isPlaying) {
                 playButton.textContent = '⏸'; // Change icon to Pause
                 mySong.play();                // Start the music
+                
+                // Update the browser tab to show the song is playing
+                document.title = `▶ ${currentTitle.textContent}`; 
             } else {
                 playButton.textContent = '▶'; // Change icon to Play
                 mySong.pause();               // Stop the music
+                
+                // Revert the browser tab back to the default title
+                document.title = "Shivam's Portfolio";
             }
         });
 
-        // Update the progress bar as the song plays
+        // 8. Progress Bar Logic
         mySong.addEventListener('timeupdate', () => {
-            const progress = (mySong.currentTime / mySong.duration) * 100;
-            document.getElementById('progress-bar').style.width = progress + '%';
+            if (!isNaN(mySong.duration)) {
+                const progress = (mySong.currentTime / mySong.duration) * 100;
+                document.getElementById('progress-bar').style.width = progress + '%';
+            }
+        });
+
+        const followBtn = document.getElementById('follow-btn');
+        followBtn.addEventListener('click', () => {
+            if (followBtn.textContent === 'FOLLOW') {
+                followBtn.textContent = 'FOLLOWING';
+                followBtn.style.border = '1px solid white';
+            } else {
+                followBtn.textContent = 'FOLLOW';
+                followBtn.style.border = '1px solid #878787';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            // Check if spacebar is pressed and we aren't typing in an input field
+            if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
+                e.preventDefault(); // Prevents the page from scrolling down
+                playButton.click(); // Triggers your existing play/pause logic
+            }
+        });
+        const likeBtn = document.getElementById('like-btn');
+        likeBtn.addEventListener('click', () => {
+            if (likeBtn.textContent === '♡') {
+                likeBtn.textContent = '♥';
+                likeBtn.style.color = '#1ed760'; // Spotify Green
+            } else {
+                likeBtn.textContent = '♡';
+                likeBtn.style.color = '#b3b3b3'; // Back to grey
+            }
+        });
+
+        document.querySelector('.big-play-btn').addEventListener('click', () => {
+            playButton.click(); // Triggers your existing play/pause logic
+        });
+
+        const progressContainer = document.getElementById('progress-container');
+
+        progressContainer.addEventListener('click', (e) => {
+            // Get the total width of the progress bar
+            const width = progressContainer.clientWidth;
+            // Get exactly where the user clicked on the X axis
+            const clickX = e.offsetX;
+            // Get the total length of the current song
+            const duration = mySong.duration;
+
+            // Only jump if a song is actually loaded and has a duration
+            if (!isNaN(duration)) {
+                mySong.currentTime = (clickX / width) * duration;
+            }
         });
     </script>
 

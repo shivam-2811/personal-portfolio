@@ -68,6 +68,22 @@ a { text-decoration: none; color: inherit; }
     box-shadow: none;
 }
 
+/* NEW: Spotify Track Play Hover Effect */
+.track:hover .track-num {
+    color: transparent; /* Hides the number */
+    position: relative;
+}
+
+.track:hover .track-num::after {
+    content: '▶';
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
 .track-num { 
     width: 60px; 
     height: 60px; 
@@ -109,10 +125,13 @@ a { text-decoration: none; color: inherit; }
     font-size: 14px;
     font-weight: 500;
     margin: 0;
+    /* NEW: Added for interactive hover/click */
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Makes the first tag in every section look "Active" (White background, black text) */
-.tags span:first-child {
+/* NEW: Active state class for JS to toggle (Replaced the static :first-child rule) */
+.tags span.active {
     background-color: white;
     color: black;
 }
@@ -144,6 +163,7 @@ a { text-decoration: none; color: inherit; }
     height: 50px;
     background-color: #1ed760; 
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .playing-info h4 { margin: 0; font-size: 14px; }
@@ -194,4 +214,31 @@ a { text-decoration: none; color: inherit; }
     .playing-info p { font-size: 10px; }
     .player-controls { gap: 10px; font-size: 16px; }
     .mini-art { width: 40px; height: 40px; }
+}
+
+/* Custom Spotify-style Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #121212; 
+}
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a; 
+    border-radius: 10px;
+    border: 3px solid #121212; /* Creates padding around the thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3; 
+}
+
+.actions a:hover, #follow-btn:hover {
+    border-color: white !important;
+    transform: scale(1.02);
+}
+
+/* Custom Spotify Green Text Selection */
+::selection {
+    background-color: #1ed760;
+    color: #000000;
 }

@@ -5,56 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gogrify</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Custom Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="SHIVAM.jpg">
 </head>
 <body>
 
     <header class="playlist-header">
-        <!-- Placeholder for your square profile picture -->
         <img src="SHIVAM.jpg" alt="Photo of Shivam" class="album-cover" style="object-fit: cover;"> 
         <div class="playlist-info">
             <p>PUBLIC PLAYLIST</p>
             <h1>Shivam's Greatest Hits</h1>
-            <p id="about">I study IMAP and I'm passionate about coding,travelling, and building cool things.</p>
-            <div class="actions">
-                <a href="[https://mail.google.com/mail/?view=cm&fs=1&to=shivambackup69@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=shivambackup69@gmail.com)" target="_blank" class="play-btn">Contact Me</a>
+            <p id="about">I am currently pursuing MBA TECH DS from NMIMS MPSTME.<br><br>
+                Apart from that I am a huge cricket fan and I also like to travel, go on late night long drives and I love to explore new cuisines.</p>
+           <div style="margin-top: 25px;">
+                <p style="color: white; font-size: 16px; font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px;">Here is where you can contact me:</p>
+                <div class="actions" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shivambackup69@gmail.com" target="_blank" class="play-btn" style="margin-top: 0;">Email</a>
+                    <a href="https://github.com/shivam-2811" target="_blank" class="play-btn" style="margin-top: 0;">GitHub</a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="play-btn" style="margin-top: 0;">LinkedIn</a>
+                </div>
             </div>
         </div>
     </header>
 
     <main class="tracklist-container">
-        <h2>Projects</h2>
+        <!-- Dynamic Time-Based Greeting -->
+        <h2 id="dynamic-greeting">Good evening</h2>
+        <p style="color: #b3b3b3; margin-top: -10px; margin-bottom: 20px; font-size: 14px;">Here are some of my featured projects:</p>
+        
         <div class="tracklist">
             <!-- Project 1 -->
-            <a href="https://github.com/shivam-2811/ipl-analytics-dbms" class="track">
+            <a href="https://github.com/shivam-2811/ipl-analytics-dbms" class="track" target="_blank">
                 <div class="track-num">1</div>
                 <div class="track-details">
-                    <h3>IPL ANALYTICS PROJECT</h3>
+                    <h3>IPL Analytics Project</h3>
                     <p>An SQL-based database tracking system for organizing and analyzing complex Indian Premier League cricket statistics.</p>
                 </div>
                 <div class="track-duration">April 2026</div>
             </a>
 
             <!-- Project 2 -->
-            <a href="link-to-project-2" class="track">
+            <a href="https://github.com/jthacker14/MusicalMarkov" class="track" target="_blank">
                 <div class="track-num">2</div>
                 <div class="track-details">
-                    <h3>Project Title Two</h3>
-                    <p>Design / Art</p>
+                    <h3>Musical Markov Chain</h3>
+                    <p>Collaborated in making an algorithmic music generator built using Markov Chains to analyze existing note patterns and probabilistically compose original, mathematically-driven melodies.</p>
                 </div>
                 <div class="track-duration">2024</div>
             </a>
         </div>
 
+        <!-- Skills Section -->
         <section class="skills-section">
-            <h2>Top Genres (Skills)</h2>
+            <h2>Technical Skills</h2>
             <div class="tags">
-                <span>HTML/CSS</span>
+                <span>All</span> 
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
-                <span>Writing</span>
-                <span>Photography</span>
+                <span>SQL</span>
+                <span>DBMS</span>
+                <span>R</span>
+                <span>C++</span>
+                <span>Python</span>
             </div>
         </section>
+
+        <!-- Hobbies Section -->
+        <section class="skills-section">
+            <h2>Hobbies & Interests</h2>
+            <div class="tags">
+                <span>All</span> 
+                <span>Travelling</span>
+                <span>Cooking</span>
+                <span>Driving</span>
+                <span>Listening to Music</span>
+            </div>
+        </section>
+        <div style="text-align: center; padding: 60px 0 20px 0; color: #b3b3b3; font-size: 12px;">
+            <p>Built with HTML, CSS & JS by Shivam © 2026</p>
+        </div>
     </main>
+
+    <!-- Now Playing Footer Bar -->
+    <div class="now-playing-bar">
+        <!-- Live Music Progress Bar -->
+        <div class="progress-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background-color: #333;">
+            <div id="progress-bar" style="height: 100%; width: 0%; background-color: #1ed760;"></div>
+        </div>
+        
+        <div class="playing-info">
+            <img src="coding.jpg" alt="Project Art" class="mini-art" style="object-fit: cover;">
+            <div>
+                <h4>Currently Coding</h4>
+                <p>IMAP Personal Portfolio</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <span>⏮</span>
+            <span class="play-pause">▶</span>
+            <span>⏭</span>
+        </div>
+    </div>
+
+    <!-- Hidden audio file loaded here -->
+    <audio id="bg-music" src="song.mp3"></audio>
+
+    <script>
+        // Dynamic time-based greeting logic
+        const hour = new Date().getHours();
+        const greetingElement = document.getElementById('dynamic-greeting');
+        
+        if (hour < 12) {
+            greetingElement.textContent = 'Good morning';
+        } else if (hour < 18) {
+            greetingElement.textContent = 'Good afternoon';
+        } else {
+            greetingElement.textContent = 'Good evening';
+        }
+
+        // Select the play button and the audio file
+        const playButton = document.querySelector('.play-pause');
+        const mySong = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        // Toggle between play/pause icons AND play/pause the actual audio
+        playButton.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playButton.textContent = '⏸'; // Change icon to Pause
+                mySong.play();                // Start the music
+            } else {
+                playButton.textContent = '▶'; // Change icon to Play
+                mySong.pause();               // Stop the music
+            }
+        });
+
+        // Update the progress bar as the song plays
+        mySong.addEventListener('timeupdate', () => {
+            const progress = (mySong.currentTime / mySong.duration) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        });
+    </script>
 
 </body>
 </html>

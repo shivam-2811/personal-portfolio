@@ -4,6 +4,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: #121212;
     color: #ffffff;
+    padding-bottom: 80px; /* Prevents the footer from hiding the bottom of the page */
 }
 
 a { text-decoration: none; color: inherit; }
@@ -22,7 +23,7 @@ a { text-decoration: none; color: inherit; }
     height: 200px;
     background-color: #282828;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    /* Add background-image: url('your-photo.jpg'); here later */
+    border-radius: 4px;
 }
 
 .playlist-info p { margin: 5px 0; color: #b3b3b3; font-size: 14px; }
@@ -40,37 +41,144 @@ a { text-decoration: none; color: inherit; }
 
 .play-btn:hover { transform: scale(1.05); }
 
-/* Tracklist (Projects) */
+/* Tracklist (Projects) - Updated to Grid Look */
 .tracklist-container { padding: 20px 40px; }
 .tracklist-container h2 { border-bottom: 1px solid #282828; padding-bottom: 10px;}
 
+.tracklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
 .track {
+    background-color: #2a2a2a; 
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 
-.track:hover { background-color: #2a2a2a; }
+.track:hover { 
+    background-color: #4a4a4a; 
+    transform: none; 
+    box-shadow: none;
+}
 
-.track-num { width: 30px; color: #b3b3b3; text-align: center; }
-.track-details { flex-grow: 1; margin-left: 15px; }
+.track-num { 
+    width: 60px; 
+    height: 60px; 
+    background-color: #1ed760; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; 
+    font-weight: bold; 
+}
+
+.track-details { 
+    flex-grow: 1; 
+    padding: 10px 15px; 
+    margin-left: 0; 
+}
+
 .track-details h3 { margin: 0; font-size: 16px; }
 .track-details p { margin: 5px 0 0 0; font-size: 14px; color: #b3b3b3; }
-.track-duration { color: #b3b3b3; font-size: 14px; }
 
-/* Skills Tags */
-.skills-section { margin-top: 40px; }
-.tags span {
-    background-color: #2a2a2a;
-    padding: 8px 15px;
-    border-radius: 20px;
-    margin-right: 10px;
-    display: inline-block;
-    font-size: 14px;
+.track-duration { 
+    display: none; /* Hidden to match the recent cards look */
 }
 
-/* Mobile Responsiveness (Required by Assignment) */
+/* Skills Tags - Updated to Pill Look */
+.skills-section { margin-top: 40px; }
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background-color: #2a2a2a; 
+    color: white;
+    padding: 8px 16px;
+    border-radius: 32px; /* Makes them perfectly round on the edges */
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Makes the first tag in every section look "Active" (White background, black text) */
+.tags span:first-child {
+    background-color: white;
+    color: black;
+}
+
+/* Now Playing Bar */
+.now-playing-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.playing-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mini-art {
+    width: 50px;
+    height: 50px;
+    background-color: #1ed760; 
+    border-radius: 4px;
+}
+
+.playing-info h4 { margin: 0; font-size: 14px; }
+.playing-info p { margin: 0; font-size: 12px; color: #b3b3b3; }
+
+.player-controls {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+/* Play button updated to White Circle */
+.play-pause {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding-left: 2px; /* Centers the play triangle */
+}
+
+.play-pause:hover { 
+    transform: scale(1.05); 
+    color: black;
+}
+
+.player-controls span:hover { color: white; }
+
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
     .playlist-header {
         flex-direction: column;
@@ -80,4 +188,10 @@ a { text-decoration: none; color: inherit; }
     }
     .playlist-info h1 { font-size: 2rem; }
     .tracklist-container { padding: 15px; }
+    
+    /* Adjusts bottom bar for mobile screens */
+    .playing-info h4 { font-size: 12px; }
+    .playing-info p { font-size: 10px; }
+    .player-controls { gap: 10px; font-size: 16px; }
+    .mini-art { width: 40px; height: 40px; }
 }

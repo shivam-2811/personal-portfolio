@@ -316,33 +316,57 @@ a { text-decoration: none; color: inherit; }
     
     .tracklist-container { padding: 15px 10px; }
     
-    /* Fixes grid for the main portfolio page */
-    .tracklist-header {
-        grid-template-columns: 25px 1.5fr 1fr 20px !important;
-        font-size: 10px;
+    /* Switch from Grid to Flexbox for perfect mobile column control */
+    .tracklist-header, .track {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
         padding: 10px 5px;
-    }
-    .track {
-        grid-template-columns: 25px 1.5fr 1fr 20px !important;
-        padding: 10px 5px;
-        gap: 8px;
-    }
-    
-    /* Fixes grid specifically for the project pages to show the 3rd column */
-    div[style*="1fr 1fr"] {
-        grid-template-columns: 25px 1fr 1fr !important;
-        gap: 10px !important;
     }
 
-    /* Shows the tools/application text and lets it wrap beautifully */
-    .track-tools { 
-        display: block !important; 
-        white-space: normal; 
+    /* 1st Column: Numbers */
+    .tracklist-header div:nth-child(1),
+    .track-num {
+        width: 25px !important;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    /* 2nd Column: Title / Image */
+    .tracklist-header div:nth-child(2),
+    .track-title-container {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 0; /* Crucial for allowing long text to wrap beautifully */
+    }
+
+    /* 3rd Column: Tools / Application */
+    .tracklist-header div:nth-child(3),
+    .track-tools {
+        width: 120px !important; /* Forces enough space to show the application text */
+        flex-shrink: 0;
+        white-space: normal !important;
         font-size: 11px;
         line-height: 1.4;
+        display: block !important;
     }
 
-    /* Lets long titles wrap instead of getting cut off */
+    /* THE MAGIC TRICK: Hide the 3rd column ONLY on the main profile page */
+    /* If the 3rd item is NOT the last item (because the 4th Link icon exists on the main page), hide it! */
+    .tracklist-header div:nth-child(3):not(:last-child),
+    .track .track-tools:not(:last-child) {
+        display: none !important;
+    }
+
+    /* 4th Column: Link Icon (Main page only) */
+    .tracklist-header div:nth-child(4),
+    .track-link {
+        width: 20px !important;
+        flex-shrink: 0;
+        text-align: center;
+    }
+
+    /* Text Wrapping Fixes */
     .track-title-text {
         white-space: normal;
         font-size: 13px !important;

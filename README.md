@@ -1,61 +1,55 @@
-🎵 Spotify-Inspired Personal Portfolio
+# Gogrify 🎧 | A Spotify-Inspired Personal Portfolio
 
-**Live Demo:** [Click Here to Listen](https://shivam-2811.github.io/personal-portfolio/)
+Welcome to **Gogrify**, a highly interactive, custom-built personal portfolio designed to mimic the aesthetic, UI, and functionality of the Spotify Web Player. 
 
-🎧 About The Project
+Instead of a standard grid layout, my projects, skills, and background are presented as "Playlists," "Tracks," and "Albums," complete with a working custom audio player and native app micro-interactions.
 
-A highly interactive, fully responsive personal portfolio meticulously designed to mimic the aesthetic and native functionality of the Spotify desktop application. Built from scratch using pure HTML, CSS, and Vanilla JavaScript, this project transitions from a static webpage into a dynamic web app, showcasing my technical projects, skills, and hobbies through the lens of a "Verified Artist" profile.
+### 🌐 Live Demo
+**[Experience the live portfolio here](https://shivam-2811.github.io/personal-portfolio/)**
 
-✨ Key Features & Micro-Interactions
+---
 
-Advanced Custom Audio Player: A fully functional "Now Playing" footer bar featuring:
+## ✨ Key Features
 
-Multi-track playlist support with working Next/Previous buttons.
+*   🎵 **Custom Audio Player:** A fully functional bottom player bar with custom tracks for different pages (`ipl_song.mp3`, `markov_song.mp3`). Features include Play/Pause toggling, a scrubbable progress bar, volume control, and Spacebar keybind support.
+*   🗂️ **Playlist-Style Project Routing:** Projects are listed as "tracks" on the main profile. Clicking a project navigates to a dedicated "Album" page (e.g., *IPL Analytics*, *Musical Markov Chain*) featuring detailed tech stacks, custom skill icons, and GitHub repository links.
+*   🖱️ **Native App Micro-Interactions:** 
+    *   Interactive **Heart (♡ to ♥)** toggle buttons.
+    *   Working **Three-dots (•••)** dropdown menus with a functional "Share" button that copies the live page URL to the clipboard.
+    *   "Follow" button toggles.
+    *   Interactive skill/hobby pill tags.
+*   🕒 **Dynamic Time-Based Greeting:** The header automatically updates to say "Good morning," "Good afternoon," or "Good evening" based on the user's local system time.
+*   📱 **Fully Responsive Layout:** Custom CSS Flexbox rules ensure the UI scales perfectly from ultra-wide desktop monitors down to mobile phone screens without horizontal scrolling issues, dynamically hiding/showing columns just like the native mobile app.
 
-A clickable, scrubbable live progress bar to seek through songs.
+---
 
-Interactive volume control slider.
+## 🛠️ Tech Stack
 
-Native App Feel:
+This project was built entirely from scratch without the use of external front-end frameworks or libraries. 
 
-Keyboard Shortcuts: Press the Spacebar to play or pause the music natively.
+*   **HTML5:** Semantic structure and layout.
+*   **CSS3:** Advanced Flexbox/Grid layouts, custom Spotify-themed scrollbars, gradients, absolute positioning, and responsive media queries.
+*   **Vanilla JavaScript (ES6+):** Audio element manipulation, DOM manipulation, event listeners, clipboard API integration, and dynamic logic.
+*   **Hosting:** GitHub Pages
 
-Dynamic Browser Tabs: The web tab title automatically updates to show the currently playing track and play/pause state.
+---
 
-Custom UI Elements: Features a sleek custom dark scrollbar and Spotify-green text selection highlighting.
+## 📁 Repository Structure
 
-Tooltips: Hover over player controls for native app-style label pop-ups.
-
-Interactive UI Syncing: Hovering over project cards dynamically updates the "Now Playing" bar to display the project's title and description.
-
-Dynamic Greetings: JavaScript-powered headers that automatically update to "Good morning," "Good afternoon," or "Good evening" based on the user's local time.
-
-Spotify Artist Aesthetic: Includes a circular profile picture, a blue "Verified Artist" checkmark, interactive "Follow" and "Like" (♥) toggle buttons, and the iconic Big Green Play Button.
-
-Modern CSS Layouts: Utilizes CSS Grid and Flexbox for responsive project tracklists and interactive, clickable filter "pill" tags.
-
-🛠️ Built With
-
-HTML5
-
-CSS3 
-
-JavaScript 
-
-📁 Featured Projects (Tracklist)
-
-IPL Analytics Project (April 2026): An SQL-based database tracking system for organizing and analyzing complex Indian Premier League cricket statistics.
-
-Musical Markov Chain (April 2026): An algorithmic music generator built using Markov Chains to analyze existing note patterns and probabilistically compose original, mathematically-driven melodies.
-
-🚀 How to Run Locally
-
-Clone this repository or download the ZIP file.
-
-Ensure index.html, style.css, your profile images (SHIVAM.jpg, coding.jpg), and your audio files (e.g., song.mp3, song2.mp3, song3.mp3) are in the same root directory.
-
-Open index.html in any modern web browser to interact with the site.
-
-Designed and Built by Shivam Gogri
-
-Student @ NMIMS | Data & Tech Enthusiast
+```text
+📂 personal-portfolio/
+├── 📄 index.html                  # Main profile page (The "Artist" profile)
+├── 📄 ipl-project.html            # Dedicated project page for IPL Analytics
+├── 📄 markov-project.html         # Dedicated project page for Musical Markov Chain
+├── 📄 style.css                   # Global stylesheet containing all custom UI/UX styling
+│
+├── 🎵 Audio Assets/
+│   ├── song.mp3 / song1-3.mp3     # Main portfolio background tracks
+│   ├── ipl_song.mp3               # Theme track for IPL Analytics project
+│   └── markov_song.mp3            # Theme track for Markov Chain project
+│
+└── 🖼️ Visual Assets/
+    ├── SHIVAM.jpg                 # Profile picture / Artist Avatar
+    ├── ipl_profile.jpg            # IPL Project Album Art
+    ├── music_markov.jpg           # Markov Project Album Art
+    └── (Various custom icons)     # sql_emoji, python, chains, data_cleaning, model, etc.

@@ -18,9 +18,9 @@
                 Shivam's Greatest Hits
                 <span style="background-color: #2e77d0; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 14px;">✓</span>
             </h1>
-            <p style="color: white; font-weight: 500; font-size: 14px; margin: 0 0 15px 0;">4 Public Repositories • MBA Tech DS</p>
-            <p id="about">Student at NMIMS by day, developer and data enthusiast by night.<br><br>
-                Off-screen, I'm a cricket fanatic always looking forward to the next travel destination, a late-night drive, or a great new meal.</p>
+            <p style="color: white; font-weight: 500; font-size: 14px; margin: 0 0 15px 0;">4 Public Repositories</p>
+            <p id="about">I am currently studying at NMIMS, blending my passion for technology with data-driven problem solving.<br><br>
+                Beyond my academic life, I am a massive cricket enthusiast. You can usually find me traveling to new places, going on late-night long drives, or exploring different cuisines.</p>
           <div style="margin-top: 25px;">
                 <!-- Distinctive Follow Button Row -->
                 <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 24px;">
@@ -35,35 +35,49 @@
                     <a href="https://www.linkedin.com/in/shivam-gogri-225370330" target="_blank" style="background: transparent; color: white; border: 1px solid #878787; padding: 6px 20px; border-radius: 32px; font-weight: bold; font-size: 14px; transition: all 0.2s;">LinkedIn</a>
                 </div>
             </div>
-            </div>
         </div>
     </header>
 
     <main class="tracklist-container">
         <!-- Dynamic Time-Based Greeting -->
         <h2 id="dynamic-greeting">Good evening</h2>
-        <p style="color: #b3b3b3; margin-top: -10px; margin-bottom: 20px; font-size: 14px;">Here are some of my featured projects:</p>
         
-        <div class="tracklist">
-            <!-- Project 1 -->
-            <a href="https://github.com/shivam-2811/ipl-analytics-dbms" class="track" target="_blank">
-                <div class="track-num">1</div>
-                <div class="track-details">
-                    <h3>IPL Analytics Project</h3>
-                    <p>An SQL-based database tracking system for organizing and analyzing complex Indian Premier League cricket statistics.</p>
-                </div>
-                <div class="track-duration">April 2026</div>
-            </a>
+        <!-- Tracklist Header Row -->
+        <div class="tracklist-header">
+            <div style="text-align: center;">#</div>
+            <div>Title</div>
+            <div>Tools</div>
+            <div style="text-align: center;">🔗</div>
+        </div>
 
-            <!-- Project 2 -->
-            <a href="https://github.com/jthacker14/MusicalMarkov" class="track" target="_blank">
-                <div class="track-num">2</div>
-                <div class="track-details">
-                    <h3>Musical Markov Chain</h3>
-                    <p>Collaborated in making an algorithmic music generator built using Markov Chains to analyze existing note patterns and probabilistically compose original, mathematically-driven melodies.</p>
+        <div class="tracklist">
+            <!-- Project 1 (Now points to the relative local/GitHub file path) -->
+            <div class="track" onclick="window.location.href='ipl-project.html'">
+                <div class="track-num">1</div>
+                <div class="track-title-container">
+                    <img src="kohli.jpeg" alt="Project Art" class="track-img">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text">IPL Analytics Project</h3>
+                        <p class="track-desc-text">Database tracking system for organizing cricket statistics.</p>
+                    </div>
                 </div>
-                <div class="track-duration">April 2026</div>
-            </a>
+                <div class="track-tools">SQL, DBMS</div>
+                <div class="track-link" title="Open Project Page">↗</div>
+            </div>
+
+            <!-- Project 2 (Still opens GitHub in a pop-up window) -->
+           <div class="track" onclick="window.location.href='markov-project.html'">
+                <div class="track-num">2</div>
+                <div class="track-title-container">
+                    <img src="music_markov.jpg" alt="Project Art" class="track-img">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text">Musical Markov Chain</h3>
+                        <p class="track-desc-text">Algorithmic music generator built using probability.</p>
+                    </div>
+                </div>
+                <div class="track-tools">Python, Markov Chains</div>
+                <div class="track-link" title="Open GitHub Repo">↗</div>
+            </div>
         </div>
 
         <!-- Skills Section -->
@@ -248,6 +262,7 @@
                 playButton.click(); // Triggers your existing play/pause logic
             }
         });
+        
         const likeBtn = document.getElementById('like-btn');
         likeBtn.addEventListener('click', () => {
             if (likeBtn.textContent === '♡') {

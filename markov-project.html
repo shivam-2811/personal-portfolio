@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Markov Chain - Gogrify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="SHIVAM.jpg">
+    <style>
+        /* Hover effects for the dropdown menu */
+        .menu-item {
+            padding: 12px 16px; 
+            color: #e5e5e5; 
+            font-size: 14px; 
+            cursor: pointer; 
+            border-radius: 2px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .menu-item:hover {
+            background-color: #3e3e3e; 
+            color: white;
+        }
+        #project-play-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Project Header (Purple Gradient for Markov Project) -->
+    <header class="playlist-header" style="background: linear-gradient(to bottom, #8a2be2, #121212); padding-top: 80px;">
+        <img src="music_markov.jpg" alt="Project Art" class="album-cover" style="border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <div class="playlist-info">
+            <p style="font-size: 12px; font-weight: bold; margin-bottom: 5px; color: white;">PUBLIC PROJECT</p>
+            <h1 style="font-size: 4.5rem; margin: 0 0 10px 0; font-weight: 900; letter-spacing: -2px;">Musical Markov Chain</h1>
+            
+            <!-- GitHub Link Replaces the Description -->
+            <p style="color: #b3b3b3; font-size: 14px; margin: 0 0 15px 0;">
+                <a href="https://github.com/jthacker14/MusicalMarkov" target="_blank" style="color: white; text-decoration: underline;">Click Here to view the GitHub Repository ↗</a>
+            </p>
+            
+            <p style="color: white; font-size: 14px; font-weight: bold; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <img src="SHIVAM.jpg" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
+                Shivam <span style="color: #b3b3b3; font-weight: normal;">• 5 Core Skills</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="tracklist-container" style="padding-top: 0;">
+        <!-- Action Bar (Play, Heart, Dots) -->
+        <div style="display: flex; align-items: center; gap: 24px; padding: 20px 0 30px 0;">
+            
+            <button id="project-play-btn" style="width: 56px; height: 56px; border-radius: 50%; background-color: #1ed760; color: black; border: none; font-size: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.1s; box-shadow: 0 8px 8px rgba(0,0,0,0.3);">
+                <span id="play-icon" style="margin-left: 4px;">▶</span>
+            </button>
+            
+            <span id="project-like-btn" style="font-size: 32px; color: #b3b3b3; cursor: pointer; transition: color 0.2s;">♡</span>
+            
+            <div style="position: relative;">
+                <span id="options-btn" style="font-size: 24px; color: #b3b3b3; cursor: pointer; letter-spacing: 2px; transition: color 0.2s;">•••</span>
+                
+                <div id="options-menu" style="display: none; position: absolute; top: 100%; left: 0; background-color: #282828; border-radius: 4px; padding: 4px; box-shadow: 0 16px 24px rgba(0,0,0,0.5); z-index: 1000; min-width: 180px; margin-top: 8px;">
+                    <div class="menu-item" id="share-btn">Share</div>
+                    <div class="menu-item" id="add-playlist-btn">Add to your playlist</div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Skills Tracklist Header -->
+        <div class="tracklist-header" style="grid-template-columns: 50px 1fr 1fr; border-bottom: 1px solid #282828; padding-bottom: 10px; margin-bottom: 15px;">
+            <div style="text-align: center;">#</div>
+            <div>Skill / Technology</div>
+            <div>Application in Project</div>
+        </div>
+
+        <div class="tracklist">
+            <!-- Skill 1 -->
+            <div class="track" style="grid-template-columns: 50px 1fr 1fr; cursor: default;">
+                <div class="track-num">1</div>
+                <div class="track-title-container">
+                    <img src="python.png" class="track-img" style="width: 40px; height: 40px;">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text" style="color: white; font-size: 16px;">Python</h3>
+                    </div>
+                </div>
+                <div class="track-tools">Core Scripting & Algorithm Development</div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="track" style="grid-template-columns: 50px 1fr 1fr; cursor: default;">
+                <div class="track-num">2</div>
+                <div class="track-title-container">
+                    <img src="chains.png" class="track-img" style="width: 40px; height: 40px;">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text" style="color: white; font-size: 16px;">Markov Chains</h3>
+                    </div>
+                </div>
+                <div class="track-tools">Probability-Based State Transitions</div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="track" style="grid-template-columns: 50px 1fr 1fr; cursor: default;">
+                <div class="track-num">3</div>
+                <div class="track-title-container">
+                    <img src="data_structures.png" class="track-img" style="width: 40px; height: 40px;">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text" style="color: white; font-size: 16px;">Data Structures</h3>
+                    </div>
+                </div>
+                <div class="track-tools">Transition Matrices & Dictionaries</div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="track" style="grid-template-columns: 50px 1fr 1fr; cursor: default;">
+                <div class="track-num">4</div>
+                <div class="track-title-container">
+                    <img src="algorithm.png" class="track-img" style="width: 40px; height: 40px;">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text" style="color: white; font-size: 16px;">Algorithmic Composition</h3>
+                    </div>
+                </div>
+                <div class="track-tools">Mathematically-Driven Melody Generation</div>
+            </div>
+
+            <!-- Skill 5 -->
+            <div class="track" style="grid-template-columns: 50px 1fr 1fr; cursor: default;">
+                <div class="track-num">5</div>
+                <div class="track-title-container">
+                    <img src="pattern.png" class="track-img" style="width: 40px; height: 40px;">
+                    <div class="track-title-info">
+                        <h3 class="track-title-text" style="color: white; font-size: 16px;">Pattern Analysis</h3>
+                    </div>
+                </div>
+                <div class="track-tools">Parsing Existing Musical Note Sequences</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Back Button -->
+    <div style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 100;">
+        <a href="index.html" style="background-color: white; color: black; padding: 12px 30px; border-radius: 50px; font-weight: bold; font-size: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s;">
+            ← Back to Profile
+        </a>
+    </div>
+
+    <!-- Hidden Audio File for Project Page -->
+    <audio id="project-music" src="markov_song.mp3"></audio>
+
+    <!-- Interactive Scripts -->
+    <script>
+        const likeBtn = document.getElementById('project-like-btn');
+        likeBtn.addEventListener('click', () => {
+            if (likeBtn.textContent === '♡') {
+                likeBtn.textContent = '♥';
+                likeBtn.style.color = '#1ed760'; 
+            } else {
+                likeBtn.textContent = '♡';
+                likeBtn.style.color = '#b3b3b3'; 
+            }
+        });
+
+        const playBtn = document.getElementById('project-play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const projectMusic = document.getElementById('project-music');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playIcon.textContent = '⏸';
+                playIcon.style.marginLeft = '0'; 
+                projectMusic.play();
+            } else {
+                playIcon.textContent = '▶';
+                playIcon.style.marginLeft = '4px'; 
+                projectMusic.pause();
+            }
+        });
+
+        projectMusic.addEventListener('ended', () => {
+            isPlaying = false;
+            playIcon.textContent = '▶';
+            playIcon.style.marginLeft = '4px';
+        });
+
+        const optionsBtn = document.getElementById('options-btn');
+        const optionsMenu = document.getElementById('options-menu');
+
+        optionsBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            if (optionsMenu.style.display === 'none' || optionsMenu.style.display === '') {
+                optionsMenu.style.display = 'block';
+                optionsBtn.style.color = 'white'; 
+            } else {
+                optionsMenu.style.display = 'none';
+                optionsBtn.style.color = '#b3b3b3';
+            }
+        });
+
+        document.addEventListener('click', () => {
+            optionsMenu.style.display = 'none';
+            optionsBtn.style.color = '#b3b3b3';
+        });
+
+        document.getElementById('share-btn').addEventListener('click', () => {
+            const liveUrl = "https://shivam-2811.github.io/personal-portfolio/markov-project.html";
+            navigator.clipboard.writeText(liveUrl).then(() => {
+                alert("Live link copied to clipboard!");
+            });
+        });
+
+        document.getElementById('add-playlist-btn').addEventListener('click', () => {
+            alert("Added to your Library!");
+        });
+    </script>
+
+</body>
+</html>

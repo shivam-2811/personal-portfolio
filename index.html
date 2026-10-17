@@ -246,9 +246,10 @@
             }
         });
 
-        const followBtn = document.getElementById('follow-btn');
+       const followBtn = document.getElementById('follow-btn');
         followBtn.addEventListener('click', () => {
-            if (followBtn.textContent === 'FOLLOW') {
+            // Using .toUpperCase() forces JS to ignore exact capitalization
+            if (followBtn.textContent.toUpperCase() === 'FOLLOW') {
                 followBtn.textContent = 'FOLLOWING';
                 followBtn.style.border = '1px solid white';
             } else {

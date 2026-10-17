@@ -264,33 +264,6 @@ a { text-decoration: none; color: inherit; }
 
 .player-controls span:hover { color: white; }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .playlist-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-    .playlist-info h1 { font-size: 2rem; }
-    .tracklist-container { padding: 15px; }
-    
-    /* Adjusts bottom bar for mobile screens */
-    .playing-info h4 { font-size: 12px; }
-    .playing-info p { font-size: 10px; }
-    .player-controls { gap: 10px; font-size: 16px; }
-    .mini-art { width: 40px; height: 40px; }
-    
-    /* Adjusts new tracklist for mobile screens */
-    .tracklist-header {
-        grid-template-columns: 30px 1fr 0px 30px; /* Hides Tools on mobile */
-    }
-    .track {
-        grid-template-columns: 30px 1fr 0px 30px;
-    }
-    .track-tools { display: none; } /* Hides Tools column on small screens */
-}
-
 /* Custom Spotify-style Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
@@ -316,4 +289,74 @@ a { text-decoration: none; color: inherit; }
 ::selection {
     background-color: #1ed760;
     color: #000000;
+}
+
+/* ------------------------------------------- */
+/* NEW: Mobile Responsiveness & Layout Fixes   */
+/* ------------------------------------------- */
+@media (max-width: 600px) {
+    body { 
+        overflow-x: hidden; /* Strictly prevents left-to-right scrolling */
+    }
+    
+    .playlist-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    
+    /* Shrinks the massive 4.5rem inline titles on project pages */
+    .playlist-info h1 { 
+        font-size: 2.2rem !important; 
+        letter-spacing: -1px !important;
+        line-height: 1.2;
+        white-space: normal !important;
+    }
+    
+    .tracklist-container { padding: 15px 10px; }
+    
+    /* Fixes grid for the main portfolio page */
+    .tracklist-header {
+        grid-template-columns: 25px 1.5fr 1fr 20px !important;
+        font-size: 10px;
+        padding: 10px 5px;
+    }
+    .track {
+        grid-template-columns: 25px 1.5fr 1fr 20px !important;
+        padding: 10px 5px;
+        gap: 8px;
+    }
+    
+    /* Fixes grid specifically for the project pages to show the 3rd column */
+    div[style*="1fr 1fr"] {
+        grid-template-columns: 25px 1fr 1fr !important;
+        gap: 10px !important;
+    }
+
+    /* Shows the tools/application text and lets it wrap beautifully */
+    .track-tools { 
+        display: block !important; 
+        white-space: normal; 
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Lets long titles wrap instead of getting cut off */
+    .track-title-text {
+        white-space: normal;
+        font-size: 13px !important;
+        line-height: 1.2;
+    }
+    
+    .track-desc-text {
+        white-space: normal;
+        font-size: 11px;
+    }
+    
+    /* Adjusts bottom bar for mobile screens */
+    .playing-info h4 { font-size: 12px; }
+    .playing-info p { font-size: 10px; }
+    .player-controls { gap: 10px; font-size: 16px; }
+    .mini-art { width: 40px; height: 40px; }
 }
